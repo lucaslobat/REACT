@@ -6,7 +6,7 @@ import { createRoot } from "react-dom/client";
 const contenedor = document.getElementById("root");
 
 // Usamos el método createRoot y le pasamos el contenedor
-const root = createRoot(contenedor);
+/* const root = createRoot(contenedor); */
 
 /* Los componentes de React consumen el objeto React
 para poder usar la sintáxis de JSX, de esta forma
@@ -14,24 +14,24 @@ podemos declarar funciones las cuales retornan
 elementos HTML atraves de JSX */
 
 function Titulo() {
-  return <h1>Fundamentos de React.js</h1>;
+  return <h1 className="titulo">Fundamentos de React.js</h1>;
 }
 
-function Parrafo() {
-  return (
-    <p>
-      The component is basically JavaScript class or function that can have
-      arguments called properties or props. Each component must return only one
-      React element that can be rendered in the browser. Now that you understood
-      what components are, let me show you how to create these components.
-    </p>
-  );
-}
+/* Desafio: recrea la función de arriba usando Vanilla JS:
+- Crea un nuevo elemento h1
+- Asignale el valor a su textContent
+- Asignale la clase de "titulo"
+- Hazle append al elemento de id "root"*/
+const root = document.querySelector("#root");
+const h1 = document.createElement("h1");
+h1.textContent = "Fundamentos de React.js!";
+h1.classList.add("titulo");
+root.append(h1);
 
 // Usamos el método render del objeto para renderizar nuestros componentes
-root.render(
+/* root.render(
   <>
     <Titulo />
     <Parrafo />
   </>
-);
+); */
